@@ -47,13 +47,17 @@
         }
       }
 
-      var str = "1234567890123567";
+      //   var str = "https5678@2.png";
+      var str = "1234567890123456";
 
       var res = new Validate(str);
 
-      console.log(res.isMin());
-      console.log(res.isMax());
-      console.log(res.isMiddle());
+      console.log("isEmail " + res.isEmail());
+      console.log("isMin " + res.isMin());
+      console.log("isMax " + res.isMax());
+      console.log("isMiddle " + res.isMiddle());
+      console.log("isHttps " + res.isHttps());
+      console.log("isPic " + res.isPic());
     </script>
   </body>
 </html>
