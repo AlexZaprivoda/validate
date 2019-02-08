@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Validate {
+        constructor(str) {
+          if (typeof str !== "string") {
+            console.log("This is not a string");
+          } else this.str = str;
+          this.pics = ["jpeg", "bmp", "png"];
+          this.min = 8;
+          this.max = 16;
+        }
+
+        isEmail() {
+          return this.str.match(/\@.{1,}\..{1,}/) ? true : false;
+        }
+
+        isMin() {
+          return this.str.length >= this.min ? true : false;
+        }
+
+        isMax() {
+          return this.str.length <= this.max ? true : false;
+        }
+
+        isMiddle() {
+          return this.str.length >= this.min && this.str.length <= this.max
+            ? true
+            : false;
+        }
+
+        isHttps() {
+          return this.str.match(/^https/) ? true : false;
+        }
+
+        isPic() {
+          return this.pics.indexOf(this.str.replace(/^.{0,}\./, "")) > -1
+            ? true
+            : false;
+        }
+      }
+
+      var str = "1234567890123567";
+
+      var res = new Validate(str);
+
+      console.log(res.isMin());
+      console.log(res.isMax());
+      console.log(res.isMiddle());
+    </script>
+  </body>
+</html>
